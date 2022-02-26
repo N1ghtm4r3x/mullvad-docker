@@ -14,6 +14,7 @@ services:
       - COUNTRY=nl # Select the country that you would like to use, chooses a random config if left empty
     volumes:
       - /your/folder/here:/etc/wireguard
+      - /lib/modules:/lib/modules:ro
     ports:
       - 1111:1111 # Example port, add ports for the services you use
     sysctls:
