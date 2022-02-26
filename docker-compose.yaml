@@ -1,0 +1,24 @@
+networks:
+  vpn_network:
+
+services:
+  vpn:
+    image: n1ghtm4r3x/mullvad-docker
+    container_name: vpn
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      - TZ=Europe/Amsterdam
+      - ACCOUNT="Mullvad accoubt number without spaces"
+      - COUNTRY=nl # Select the country that you would like to use, chooses a random config if left empty
+    volumes:
+      - /your/folder/here:/etc/wireguard
+    ports:
+      - 1111:1111 # Example port, add ports for the services you use
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv6.conf.all.disable_ipv6=0
+    restart: unless-stopped
+    networks:
+      - vpn_network
