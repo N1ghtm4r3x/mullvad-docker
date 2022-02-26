@@ -10,7 +10,7 @@ services:
       - SYS_MODULE
     environment:
       - TZ=Europe/Amsterdam
-      - ACCOUNT="Mullvad accoubt number without spaces"
+      - ACCOUNT="Mullvad account number without spaces"
       - COUNTRY=nl # Select the country that you would like to use, chooses a random config if left empty
     volumes:
       - /your/folder/here:/etc/wireguard
