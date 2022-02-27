@@ -1,12 +1,25 @@
-FROM debian:stable-slim
+FROM alpine
 
 RUN mkdir /VPN
-
 COPY mullvad-wg.sh /VPN
 COPY startup.sh /VPN
 
-RUN chmod +x /VPN/startup.sh; chmod +x /VPN/mullvad-wg.sh; apt update; apt install -y iptables iproute2 jq curl openresolv wireguard iputils-ping; sed -i '/sysctl/d' /usr/bin/wg-quick
+RUN chmod +x /VPN/startup.sh \
+    && chmod +x /VPN/mullvad-wg.sh \
+    && apk update \
+    && apk add ip6tables \
+               findutils \
+               iptables \
+               iproute2 \
+               jq \
+               curl \
+               openresolv \
+               wireguard-tools \
+               iputils \
+               bash \
+               grep \
+               net-tools \
+               ts \
+    && sed -i '/sysctl/d' /usr/bin/wg-quick
 
-ENTRYPOINT /VPN/startup.sh
-
-CMD tail -f /dev/null
+ENTRYPOINT bash /VPN/startup.sh
