@@ -1,7 +1,7 @@
 services:
   vpn:
     image: n1ghtm4r3x/mullvad-docker
-    container_name: local-vpn
+    container_name: vpn
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
