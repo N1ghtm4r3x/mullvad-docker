@@ -2,16 +2,24 @@
 
 set -e
 
+<<<<<<< HEAD
+=======
+COUNTRY=se
+
+>>>>>>> 807058e8f2b2a975153bef94bae19e417921d0e7
 default_route_ip=$(ip route | grep default | awk '{print $3}')
 if [[ -z "$default_route_ip" ]]; then
     echo "No default route configured" >&2
     exit 1
 fi
 
+<<<<<<< HEAD
 if [[ -z "$COUNTRY" ]]; then
     COUNTRY=se
 fi
 
+=======
+>>>>>>> 807058e8f2b2a975153bef94bae19e417921d0e7
 export ACCOUNT
 
 configs=`find /etc/wireguard -type f -printf "%f\n"`
