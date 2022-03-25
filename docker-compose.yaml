@@ -7,11 +7,8 @@ services:
       - SYS_MODULE
     environment:
       - TZ=Europe/Stockholm # Set timezone
-<<<<<<< HEAD
       - ACCOUNT= #Add your mullvad account number without spaces
-=======
       - ACCOUNT= # Add your mullvad account number without spaces
->>>>>>> 807058e8f2b2a975153bef94bae19e417921d0e7
       - COUNTRY= # Choose the country you would like to use, Default is se (Sweden)
       - LOCAL_SUBNET=192.168.1.0/24 # Add your local subnet
     volumes:
