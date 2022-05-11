@@ -8,7 +8,7 @@ steps:
     depth: 1
 
 - name: docker
-  image: 
+  image: plugins/docker
   environment:
     registry:
       from_secret: docker_registry
