@@ -1,0 +1,11 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: registry.jbootsma.com/custom/mullvad
+  environment:
+    USERNAME:
+      from_secret: docker_username
+    PASSWORD:
+      from_secret: docker_password
