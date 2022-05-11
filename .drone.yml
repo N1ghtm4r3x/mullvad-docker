@@ -24,7 +24,7 @@ pipeline:
     group: docker
     settings:
       dry_run: true
-      repo: custom/mullvad
+      repo: registry.jbootsma.com/custom/mullvad
       dockerfile: Dockerfile
       #platforms: linux/arm/v7,linux/arm64/v8,linux/amd64,linux/ppc64le
       tag: test
