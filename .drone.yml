@@ -1,11 +1,7 @@
 kind: pipeline
 name: mullvad
 
-steps:
-- name: clone
-  image: plugins/git
-  settings:
-    depth: 1
+clone:
 
 - name: docker
   image: plugins/docker
