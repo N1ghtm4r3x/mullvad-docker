@@ -17,7 +17,8 @@
 #    tags: latest
 pipeline:
   ###############
-  # S e r v e r #
+  # S e r v e r #    username:
+
   ###############
   publish-server-dryrun:
     image: plugins/docker
@@ -25,10 +26,13 @@ pipeline:
     secrets: [ docker_username, docker_password ]
     group: docker
     settings:
-      dry_run: false
-      repo: registry.jbootsma.com/custom/mullvad
-      dockerfile: Dockerfile
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: registry.jbootsma.com/custom/mullvad
+    dockerfile: Dockerfile
       #platforms: linux/arm/v7,linux/arm64/v8,linux/amd64,linux/ppc64le
-      tag: test
+    tag: test
     when:
       event: push
