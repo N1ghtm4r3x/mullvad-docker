@@ -5,6 +5,7 @@ name: mullvad
 clone:
   depth: 1
 
+steps:
 - name: docker
   image: plugins/docker
   environment:
