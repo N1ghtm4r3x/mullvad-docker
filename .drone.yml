@@ -23,7 +23,7 @@ pipeline:
     image: plugins/docker
     group: docker
     settings:
-      dry_run: true
+      dry_run: false
       repo: registry.jbootsma.com/custom/mullvad
       dockerfile: Dockerfile
       #platforms: linux/arm/v7,linux/arm64/v8,linux/amd64,linux/ppc64le
