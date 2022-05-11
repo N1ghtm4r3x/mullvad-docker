@@ -20,7 +20,8 @@ pipeline:
   # S e r v e r #
   ###############
   publish-server-dryrun:
-    image: plugins/docker
+#    image: plugins/docker
+    image: woodpeckerci/plugin-docker-buildx
     group: docker
     settings:
       dry_run: false
