@@ -1,11 +1,21 @@
 kind: pipeline
-name: default
+name: mullvad
 
 steps:
-- name: build
-  image: registry.jbootsma.com/custom/mullvad
+- name: clone
+  image: plugins/git
+  settings:
+    depth: 1
+
+- name: docker
+  image: 
   environment:
-    USERNAME:
+    registry:
+      from_secret: docker_registry
+    username:
       from_secret: docker_username
-    PASSWORD:
+    password:
       from_secret: docker_password
+    repo:
+      from_secret: docker_repo
+    tags: latest
