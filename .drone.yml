@@ -27,6 +27,7 @@ pipeline:
     registry: registry.jbootsma.com
     repo: registry.jbootsma.com/cybergame/mullvad
     dockerfile: Dockerfile
+    platform: arm64
     tag: test
     when:
       event: push
