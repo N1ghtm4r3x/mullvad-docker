@@ -9,7 +9,7 @@
 #    registry:
 #      from_secret: docker_registry
 #    username:
-#      from_secret: docker_usernamel
+#      from_secret: docker_usernamelll
 #    password:
 #      from_secret: docker_passwordl
 #    repo:
