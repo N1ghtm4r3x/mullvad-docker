@@ -14,7 +14,7 @@
 #      from_secret: docker_passwordl
 #    repo:
 #      from_secret: docker_repo
-#    tags: latest
+#    tags: latest #
 pipeline:
   ###############
   # S e r v e r #    username:
@@ -23,7 +23,7 @@ pipeline:
   publish-server-dryrun:
     image: plugins/docker
   #  image: woodpeckerci/plugin-docker-buildx
-    secrets: [ docker_username, docker_password ]
+   # secrets: [ docker_username, docker_password ]
     group: docker
     settings:
     #username:
