@@ -1,6 +1,8 @@
 kind: pipeline
 name: mullvad
 
+clone:
+
 steps:
   - name: mullvad-build
     image: plugins/docker
