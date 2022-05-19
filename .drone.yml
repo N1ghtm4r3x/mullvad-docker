@@ -6,8 +6,16 @@ platform:
   arch: arm64
 
 steps:
-  - name: greeting
-    image: alpine
-    commands:
-      - echo hello
-      - echo world
+  - name: mullvad-build
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    registry: registry.jbootsma.com
+    repo: registry.jbootsma.com/cybergame/mullvad
+    dockerfile: Dockerfile
+    tag: test
+    when:
+      event: push
