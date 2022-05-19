@@ -1,14 +1,15 @@
 kind: pipeline
 type: docker
 name: mullvad
- publish-server-dryrun:
+
+steps:
     image: plugins/docker
     group: docker
     settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
     registry: registry.jbootsma.com
     repo: registry.jbootsma.com/cybergame/mullvad
     dockerfile: Dockerfile
