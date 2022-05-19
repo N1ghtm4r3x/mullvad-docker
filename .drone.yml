@@ -9,12 +9,12 @@ steps:
   - name: mullvad-build
     image: plugins/docker
     settings:
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
     registry: registry.jbootsma.com
     repo: registry.jbootsma.com/cybergame/mullvad
+      USERNAME:
+        from_secret: docker_username
+      USERNAME:
+        from_secret: docker_password
     dockerfile: Dockerfile
     tag: test
     when:
