@@ -1,7 +1,8 @@
 kind: pipeline
 name: mullvad
-
-clone:
+platform:
+  os: linux
+  arch: arm
 
 steps:
   - name: mullvad-build
