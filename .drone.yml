@@ -13,10 +13,10 @@ steps:
         from_secret: docker_username
       USERNAME:
         from_secret: docker_password
-    registry: registry.jbootsma.com
-    repo: registry.jbootsma.com/cybergame/mullvad:test
-    dockerfile: Dockerfile
-    tags:
-      - test
+      registry: registry.jbootsma.com
+      repo: registry.jbootsma.com/cybergame/mullvad
+      dockerfile: Dockerfile
+      tags:
+        - test
     when:
       event: push
