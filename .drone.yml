@@ -16,6 +16,7 @@ steps:
     registry: registry.jbootsma.com
     repo: registry.jbootsma.com/cybergame/mullvad:test
     dockerfile: Dockerfile
-    tags: test
+    tags:
+      - test
     when:
       event: push
