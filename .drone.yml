@@ -16,8 +16,10 @@ steps:
       registry: registry.jbootsma.com
       repo: registry.jbootsma.com/cybergame/mullvad
       dockerfile: Dockerfile
-      auto_tag: true
-      #tags:
-      #  - test
+      #auto_tag: true
+      
+      tags:
+        - build-${DRONE_BUILD_NUMBER}
+        - latest
     when:
       event: push
