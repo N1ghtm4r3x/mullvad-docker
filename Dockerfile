@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine
 
 RUN mkdir /VPN
 COPY mullvad-wg.sh /VPN
