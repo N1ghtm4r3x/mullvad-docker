@@ -4,6 +4,7 @@ RUN mkdir /VPN
 COPY mullvad-wg.sh /VPN
 COPY startup.sh /VPN
 
+## Quick build test
 RUN chmod +x /VPN/startup.sh \
     && chmod +x /VPN/mullvad-wg.sh \
     && apk update \
